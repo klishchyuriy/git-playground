@@ -49,7 +49,7 @@ while not is_game_over():
 
     if guess in full_list:
         if guess in guesses:
-            print('You have already guessed it!')
+            print('You can not guess the same word twice!')
             continue
         guessed += 1
         guesses.append(guess)
@@ -60,3 +60,7 @@ while not is_game_over():
     else:
         errors += 1
         print(f"Oops 🙁 No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+
+    if errors == ERRORS_TO_LOSE:
+        print('Sorry, you lost :(')
+        break
